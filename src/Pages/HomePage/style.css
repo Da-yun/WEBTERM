@@ -14,7 +14,8 @@
   height: 200px;
   right: 20px;
   border-radius: 100px;
-  top: 50px;
+  top: 5%;
+  margin-bottom: 5px;
   background: #fcaf3c;
   display: flex;
   align-items: center;

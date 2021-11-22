@@ -1,16 +1,16 @@
-import '../HomePage/HomePage.css';
+import '../HomePage/style.css';
 function HomePage() {
   function b() {
     alert('b');
   }
   return (
-    <div class="container">
-      <div class="moon">
+    <div className="container">
+      <div className="moon">
         <p>
           <b>Open The Door!</b>
         </p>
       </div>
-      <div class="home">
+      <div className="home">
         <svg
           width="884"
           height="690"

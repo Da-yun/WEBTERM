@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+}
+
+.line1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.line2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.home1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+.home2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
