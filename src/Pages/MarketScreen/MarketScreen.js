@@ -1,6 +1,7 @@
 import '../MarketScreen/style.css';
 import MarketRice from '../../Components/MarketRice/MarketRice';
 import MarketDesert from '../../Components/MarketDesert/MarketDesert';
+import MarketWall from '../../Components/MarketWall/MarketWall';
 function MarketScreen() {
   return (
     <div className="container">
@@ -32,8 +33,14 @@ function MarketScreen() {
             fill="#FCAF3C"
           />
         </svg>
-        <MarketDesert class="home2" />
+        <div className="home2">
+          <MarketDesert />
+        </div>
       </div>
+      <div className="footer">
+        <MarketWall />
+      </div>
+      <p class="cart">장바구니</p>
     </div>
   );
 }
