@@ -1,14 +1,20 @@
-import '../MarketScreen/style.css';
+import '../MarketPage/style.css';
 import MarketRice from '../../Components/MarketRice/MarketRice';
 import MarketDesert from '../../Components/MarketDesert/MarketDesert';
 import MarketWall from '../../Components/MarketWall/MarketWall';
-function MarketScreen() {
+import Picket from '../../Components/Picket/Picket';
+import Charicter from '../../Components/Charicter/Charicter';
+
+//게임을 선택하는 MarketPage입니다.
+// 컴포넌트 파일에서 필요한 컴포넌트를 가져와 생성하였습니다.
+function MarketPage() {
   return (
     <div className="container">
       <div className="line1">
         <svg
           width="444"
           height="1013"
+          className="repeat"
           viewBox="0 0 444 1013"
           fill="#FCAF3C"
           xmlns="http://www.w3.org/2000/svg"
@@ -38,11 +44,20 @@ function MarketScreen() {
         </div>
       </div>
       <div className="footer">
-        <MarketWall />
+        <div className="wall">
+          <MarketWall className="wall" />
+          <MarketWall className="wall" />
+        </div>
       </div>
-      <p class="cart">장바구니</p>
+      <p className="cart">장바구니</p>
+      <div className="picket">
+        <Picket />
+      </div>
+      <div className="charicter">
+        <Charicter />
+      </div>
     </div>
   );
 }
 
-export default MarketScreen;
+export default MarketPage;

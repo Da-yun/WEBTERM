@@ -1,9 +1,12 @@
+// MarketPage에서 담장역할을 하는 svg입니다.
+// 직접 그린 svg를 return 합니다.
+
 function MarketWall() {
   return (
     <svg
-      width="100%"
-      height="207"
-      viewBox="0 0 100% 207"
+      width="1440"
+      height="400"
+      viewBox="0 0 1440 400"
       fill="#974603"
       xmlns="http://www.w3.org/2000/svg"
     >

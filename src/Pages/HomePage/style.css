@@ -21,7 +21,10 @@
   align-items: center;
   justify-content: center;
 }
-
+p {
+  font-size: 24px;
+  font-weight: bold;
+}
 .home {
   display: flex;
   width: 100%;

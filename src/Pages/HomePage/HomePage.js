@@ -1,4 +1,7 @@
 import '../HomePage/style.css';
+
+// 제일 처음 나오는 홈 페이지입니다.
+// 직접 그린 svg를 div 안에 담아 조절하였습니다.
 function HomePage() {
   function b() {
     alert('b');
@@ -6,9 +9,7 @@ function HomePage() {
   return (
     <div className="container">
       <div className="moon">
-        <p>
-          <b>Open The Door!</b>
-        </p>
+        <p>Open The Door!</p>
       </div>
       <div className="home">
         <svg
