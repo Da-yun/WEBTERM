@@ -1,0 +1,48 @@
+.contain {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #974603;
+}
+.header {
+  margin-top: 7%;
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.menu {
+  display: flex;
+  width: 60%;
+  height: 75%;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #fcaf3c;
+}
+.korea {
+  margin-right: 2%;
+  font-weight: bold;
+  font-size: 24px;
+}
+.rice {
+  font-weight: bold;
+  font-size: 26px;
+  color: red;
+}
+.goback {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  font-size: 25px;
+}
+
+.clear {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 25px;
+}
