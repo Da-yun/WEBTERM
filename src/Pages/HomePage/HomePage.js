@@ -2,6 +2,7 @@ import '../HomePage/homestyle.css';
 import React, { useState, useEffect } from 'react';
 import cyberFunc from '../../Image/cyberfunc.jpg';
 import Logo from '../../Components/Logo/Logo';
+import cari from '../../Image/1.png';
 // 제일 처음 나오는 홈 페이지입니다.
 // 직접 그린 svg를 div 안에 담아 조절하였습니다.
 function HomePage() {
@@ -9,7 +10,9 @@ function HomePage() {
 
   let num = 0;
   var Array = ['#ff3399', 'white'];
-
+  let timer;
+  let x = -200;
+  let y = 0;
   useEffect(() => {
     let timer = setInterval(() => colorChange(), 1000);
     return () => {
@@ -20,6 +23,18 @@ function HomePage() {
     if (num == 2) num = 0;
     setColor(Array[num]);
     num++;
+  }
+  function draw() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var car = document.getElementById('car');
+    ctx.clearRect(0, 0, 331, 233);
+    ctx.drawImage(car, x, y, 150, 150);
+    if (x == 700) {
+      clearInterval(timer);
+      alert('너머가자');
+    }
+    x += 1;
   }
   const btnColorChange = (e) => {
     if (e.target.id == 'korean') {
@@ -43,6 +58,8 @@ function HomePage() {
     let english = document.getElementById('english').style;
     if (korean.color != 'red' && english.color != 'red') {
       alert('언어를 먼저 선택하세요');
+    } else {
+      timer = setInterval(draw, 5);
     }
   }
 
@@ -66,6 +83,8 @@ function HomePage() {
           </button>
         </div>
       </div>
+      <canvas id="canvas"></canvas>
+      <img src={cari} alt="car" id="car"></img>
     </div>
   );
 }
