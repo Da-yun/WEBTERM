@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import cyberFunc from '../../Image/cyberfunc.jpg';
 import Logo from '../../Components/Logo/Logo';
 import cari from '../../Image/1.png';
+import { useNavigate } from 'react-router-dom';
+
 // 제일 처음 나오는 홈 페이지입니다.
 // 직접 그린 svg를 div 안에 담아 조절하였습니다.
 function HomePage() {
   const [color, setColor] = useState('white');
+  const navigate = useNavigate();
 
   let num = 0;
   var Array = ['#ff3399', 'white'];
@@ -32,7 +35,7 @@ function HomePage() {
     ctx.drawImage(car, x, y, 150, 150);
     if (x == 700) {
       clearInterval(timer);
-      alert('너머가자');
+      navigate('/market');
     }
     x += 1;
   }
