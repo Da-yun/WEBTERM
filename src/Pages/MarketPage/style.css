@@ -39,12 +39,13 @@
 .line {
   background-size: auto auto;
 }
-.home1 {
+#rice {
   position: absolute;
   top: 1%;
   left: 2%;
   display: flex;
-  width: 55%;
+  width: 80%;
+  height: 40%;
 }
 .cart {
   z-index: 1;
@@ -52,12 +53,13 @@
   bottom: 0%;
   right: 1%;
 }
-.home2 {
+#desert {
   position: absolute;
   top: 10%;
   right: 2%;
   display: flex;
-  width: 40%;
+  width: 60%;
+  height: 40%;
 }
 
 .footer {

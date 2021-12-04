@@ -24,7 +24,7 @@ function MarketPage() {
             fill="#FCAF3C"
           />
         </svg>
-        <MarketRice className="home1" />
+        <MarketRice />
       </div>
       <div className="line2">
         <svg

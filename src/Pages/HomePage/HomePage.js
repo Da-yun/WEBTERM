@@ -68,7 +68,7 @@ function HomePage() {
 
   return (
     <div className="container">
-      <img src={cyberFunc} alt="logo"></img>
+      <img className="img" src={cyberFunc} alt="logo"></img>
       <div className="logo">
         <Logo color={color} />
         <p className="choice">Choice Your Ranguage!</p>
