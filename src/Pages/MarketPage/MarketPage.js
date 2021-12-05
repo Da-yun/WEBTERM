@@ -13,18 +13,17 @@ function MarketPage() {
   let x = 0;
   let y = 0;
   function animation() {
-    $('#move')
+    $('.charicter')
       .css({
         top: y,
         left: x,
         width: 'max-content',
         height: 'max-content',
         position: 'absolute',
-        display: 'flex',
       })
-      .show();
-    var div = $('#move');
-    div.append($('#ozingu'));
+      .fadeIn();
+    //var div = $('#move');
+    // div.append($('#ozingu'));
   }
   useEffect(() => {
     var container = $('.container');
@@ -83,7 +82,6 @@ function MarketPage() {
       <div className="charicter">
         <Charicter />
       </div>
-      <div id="move"></div>
     </div>
   );
 }
