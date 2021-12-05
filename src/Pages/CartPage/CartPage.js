@@ -1,4 +1,4 @@
-import '../CartPage/style.css';
+import '../CartPage/cartstyle.css';
 import React from 'react';
 import { useTable } from 'react-table';
 import Data from '../CartPage/Data'; // 테이블 cell에 들어갈 데이터파일입니다.
