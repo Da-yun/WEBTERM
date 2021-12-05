@@ -6,6 +6,7 @@ function Charicter() {
     <svg
       width="141"
       height="232"
+      id="ozingu"
       viewBox="0 0 141 232"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

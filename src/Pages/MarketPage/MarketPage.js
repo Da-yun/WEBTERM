@@ -4,10 +4,37 @@ import MarketDesert from '../../Components/MarketDesert/MarketDesert';
 import MarketWall from '../../Components/MarketWall/MarketWall';
 import Picket from '../../Components/Picket/Picket';
 import Charicter from '../../Components/Charicter/Charicter';
+import $ from 'jquery';
+import React, { useState, useEffect } from 'react';
 
 //게임을 선택하는 MarketPage입니다.
 // 컴포넌트 파일에서 필요한 컴포넌트를 가져와 생성하였습니다.
 function MarketPage() {
+  let x = 0;
+  let y = 0;
+  function animation() {
+    $('#move')
+      .css({
+        top: y,
+        left: x,
+        width: 'max-content',
+        height: 'max-content',
+        position: 'absolute',
+        display: 'flex',
+      })
+      .show();
+    var div = $('#move');
+    div.append($('#ozingu'));
+  }
+  useEffect(() => {
+    var container = $('.container');
+    container.click(function (e) {
+      x = e.pageX;
+      y = e.pageY;
+      //$('.charicter').appendTo('#move');
+      $('.charicter').fadeOut(animation);
+    });
+  }, []);
   return (
     <div className="container">
       <div className="line1">
@@ -56,6 +83,7 @@ function MarketPage() {
       <div className="charicter">
         <Charicter />
       </div>
+      <div id="move"></div>
     </div>
   );
 }
