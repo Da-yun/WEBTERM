@@ -5,11 +5,12 @@ import MarketWall from '../../Components/MarketWall/MarketWall';
 import Picket from '../../Components/Picket/Picket';
 import Charicter from '../../Components/Charicter/Charicter';
 import $ from 'jquery';
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 //게임을 선택하는 MarketPage입니다.
 // 컴포넌트 파일에서 필요한 컴포넌트를 가져와 생성하였습니다.
 function MarketPage() {
+  const navigate = useNavigate();
   let x = 0;
   let y = 0;
   function animation() {
@@ -22,11 +23,17 @@ function MarketPage() {
         position: 'absolute',
       })
       .fadeIn();
-    //var div = $('#move');
-    // div.append($('#ozingu'));
+  }
+  function goGame() {
+    navigate('/selectGame', { state: 'rice' });
   }
   useEffect(() => {
     var container = $('.container');
+    var rice = $('#rice');
+    var desert = $('#desert');
+    rice.click(function (e) {
+      $('.charicter').fadeOut(goGame);
+    });
     container.click(function (e) {
       x = e.pageX;
       y = e.pageY;

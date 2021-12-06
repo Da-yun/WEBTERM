@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/market" exact element={<MarketPage />} />
+        <Route path="/selectGame" exact element={<SelectGamePage />} />
       </Routes>
     </BrowserRouter>
   );
