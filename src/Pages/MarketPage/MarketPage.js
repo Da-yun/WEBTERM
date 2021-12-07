@@ -13,6 +13,7 @@ function MarketPage() {
   const navigate = useNavigate();
   let x = 0;
   let y = 0;
+  var type = '';
   function animation() {
     $('.charicter')
       .css({
@@ -25,14 +26,19 @@ function MarketPage() {
       .fadeIn();
   }
   function goGame() {
-    navigate('/selectGame', { state: 'rice' });
+    navigate('/selectGame', { state: type });
   }
   useEffect(() => {
     var container = $('.container');
     var rice = $('#rice');
     var desert = $('#desert');
     rice.click(function (e) {
+      type = e.target.id;
       $('.charicter').fadeOut(goGame);
+    });
+    desert.click(function (e) {
+      type = e.target.id;
+      $('.charicter').fadeOut(goGame('desert'));
     });
     container.click(function (e) {
       x = e.pageX;

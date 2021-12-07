@@ -18,6 +18,9 @@ function SelectGamePage() {
     item1.mouseenter(function (e) {
       item1.animate({ width: '+=150px' });
     });
+    item1.click(function () {
+      navigate('/gamePage1', { state: 'kimchi' });
+    });
     item1.mouseleave(function (e) {
       item1.animate({ width: '-=150px' });
     });
@@ -51,6 +54,9 @@ function SelectGamePage() {
           <Menu3 />
         </div>
       </div>
+      <p className="goback" onClick={() => navigate(-1)}>
+        마을로 돌아가기
+      </p>
       <p className="goback" onClick={() => navigate(-1)}>
         마을로 돌아가기
       </p>
