@@ -3,9 +3,11 @@
   background: #974603;
   display: flex;
   width: 100%;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   height: 100%;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,8 +15,13 @@
 
 .intro {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 70px;
+  font-size: 60px;
+  height: 20%;
   display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 }
 #count {
   display: none;
@@ -27,22 +34,28 @@
   margin-right: 5px;
 }
 .fireBucket {
-  position: absolute;
-  bottom: 2%;
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+}
+
+#rePlay{
+  display: none;
 }
 #imgBucket {
   width: 80%;
-  top: 10%;
   display: flex;
-  position: absolute;
-  height: 80%;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
-#hidden {
+.hidden {
   width: 20%;
-  height: 40%;
+  height: 50%;
   margin: 10px;
   background-color: #fcaf3c;
 }

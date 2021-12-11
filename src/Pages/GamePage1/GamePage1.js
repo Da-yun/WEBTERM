@@ -5,14 +5,15 @@ import ramen from '../../Image/gimchi/ramen.png';
 import gimchi from '../../Image/gimchi/gimchi.png';
 import boodae from '../../Image/gimchi/boodae.png';
 import oogugi from '../../Image/gimchi/oogugi.png';
+import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 import { BsFillAlarmFill } from 'react-icons/bs';
 function GamePage1() {
   const array = [];
   let index = -1;
-  let timer = '';
   let cn = 6;
-  const [count, setCount] = useState(6);
+  let timer = '';
+  const navigate = useNavigate();
   function createList() {
     let img1 = ' <img src=' + ramen + " alt='background' id='ramen' />";
     let img2 = ' <img src=' + gimchi + " alt='background' id='gimchi' />";
@@ -27,6 +28,7 @@ function GamePage1() {
     for (let i = 0; i < array.length; i++) {
       if (array[i].includes('gimchi')) {
         index = i;
+        console.log('dd' + index);
       }
       rst += array[i];
     }
@@ -34,9 +36,28 @@ function GamePage1() {
   }
   function createImg() {
     let list =
-      "<div id = 'hidden'></div><div id = 'hidden'></div><div id = 'hidden'></div><div id = 'hidden'></div>";
+      "<div id = '1' class = 'hidden'></div><div id = '2'  class = 'hidden'></div><div id = '3'  class = 'hidden'></div><div id = '4'  class = 'hidden'></div>";
     return list;
   }
+  function rePlay() {
+    $('#imgBucket').css('display', 'none');
+    $('#count').css('display', 'none');
+    $('.fireBucket').css('display', 'flex');
+    $('#rePlay').css('display', 'flex');
+  }
+  function time() {
+    timer = setInterval(function () {
+      if (cn === 0) {
+        clearInterval(timer);
+        rePlay();
+      } else {
+        cn--;
+        let counter = " <p id='countText'> " + '제한시간 ' + cn + '초' + '</p>';
+        $('#countText').html(counter);
+      }
+    }, 1000);
+  }
+
   useEffect(() => {
     setTimeout(function () {
       $('.intro').css('display', 'none');
@@ -46,17 +67,56 @@ function GamePage1() {
       setTimeout(function () {
         let lst = createImg();
         $('#imgBucket').html(lst);
-        setTimeout(function () {
-          let lst = createImg();
-          $('#imgBucket').html(lst);
-          $('#count').css('display', 'flex');
-          setTimeout(function () {
-            $('#count').css('display', 'none');
-            console.log('n');
-          }, 5000);
-        }, 1000);
+        $('#count').css('display', 'flex');
+        time();
       }, 1000);
-    }, 2000);
+    }, 3000);
+    $(document).on('click', '#1', function (e) {
+      if (0 == index) {
+        navigate('/information');
+        clearInterval(timer);
+      } else {
+        clearInterval(timer);
+        console.log('t');
+        rePlay();
+      }
+    });
+    $(document).on('click', '#2', function (e) {
+      if (1 == index) {
+        console.log('e');
+        navigate('/information');
+        clearInterval(timer);
+      } else {
+        clearInterval(timer);
+        console.log('t');
+        rePlay();
+      }
+    });
+    $(document).on('click', '#3', function (e) {
+      if (2 == index) {
+        console.log('e');
+        navigate('/information');
+        clearInterval(timer);
+      } else {
+        clearInterval(timer);
+        rePlay();
+        console.log('t');
+      }
+    });
+    $(document).on('click', '#4', function (e) {
+      if (3 == index) {
+        console.log('e');
+        navigate('/information');
+        clearInterval(timer);
+      } else {
+        clearInterval(timer);
+        rePlay();
+        console.log('t');
+      }
+    });
+    $(document).on('click', '#rePlay', function (e) {
+      window.location.replace('/gamePage1');
+    });
   });
   return (
     <div className="gameContainer">
@@ -66,12 +126,13 @@ function GamePage1() {
         <br />
         김치찌개는 어디있을까요?
       </p>
+      <p id="rePlay">다시 시작</p>
       <div className="fireBucket">
         <FireBucket />
       </div>
       <div id="count">
-        <p id="countText">{count}초</p>
-        <BsFillAlarmFill size={30} color="red" />
+        <p id="countText">제한시간 6초</p>
+        <BsFillAlarmFill size={30} color="black" />
       </div>
       <div id="imgBucket"></div>
     </div>
