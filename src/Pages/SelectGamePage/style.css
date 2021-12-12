@@ -1,25 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 .contain {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #974603;
+}
+.menu1 {
+  width: 20%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+.menu2 {
+  width: 20%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+.menu3 {
+  width: 20%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+#item1 {
+  display: flex;
+  vertical-align: middle;
+  top: 20%;
+  height: max-content;
+  width: 3%;
+  align-self: center;
+  justify-self: center;
+}
+
+#backgroundWall {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  display: flex;
+}
+#menucontainer {
   display: flex;
   width: 100%;
   height: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: #974603;
-}
-.header {
-  margin-top: 7%;
-  display: flex;
-  width: 100%;
-  height: max-content;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 .menu {
   display: flex;
-  width: 60%;
-  height: 75%;
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  top: 15%;
+  position: absolute;
   justify-content: center;
+  align-items: center;
   border-radius: 10px;
   background-color: #fcaf3c;
 }
@@ -37,7 +75,9 @@
   position: absolute;
   bottom: 2%;
   left: 2%;
-  font-size: 25px;
+  color: black;
+  font-size: 30px;
+  font-family: 'Jua', sans-serif;
 }
 
 .clear {

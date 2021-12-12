@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+.gameContainer {
+  background: #974603;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.intro {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 60px;
+  height: 20%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+#count {
+  display: none;
+  margin-top: 10%;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+}
+#countText {
+  margin-right: 5px;
+}
+.fireBucket {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+}
+
+#rePlay{
+  display: none;
+}
+#imgBucket {
+  width: 80%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  width: 20%;
+  height: 50%;
+  margin: 10px;
+  background-color: #fcaf3c;
+}
+#ramen,
+#gimchi,
+#boodae,
+#oogugi {
+  width: 20%;
+  height: 40%;
+  border: 2px;
+  margin: 10px;
+  border-color: black;
+  border-style: dotted;
+}
