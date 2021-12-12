@@ -4,16 +4,23 @@ import MarketDesert from '../../Components/MarketDesert/MarketDesert';
 import MarketWall from '../../Components/MarketWall/MarketWall';
 import Picket from '../../Components/Picket/Picket';
 import Charicter from '../../Components/Charicter/Charicter';
+import { useLocation } from 'react-router-dom';
 import $ from 'jquery';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import backSong from '../../audio/Blue.mp3';
+import open from '../../audio/door.mp3';
+import ReactAudioPlayer from 'react-audio-player';
 import { useNavigate } from 'react-router-dom';
 //게임을 선택하는 MarketPage입니다.
 // 컴포넌트 파일에서 필요한 컴포넌트를 가져와 생성하였습니다.
 function MarketPage() {
+  const location = useLocation();
   const navigate = useNavigate();
   let x = 0;
   let y = 0;
-  var type = '';
+  const [isPlay, setIsPlay] = useState(false);
+  let type = location.state;
+
   function animation() {
     $('.charicter')
       .css({
@@ -26,9 +33,13 @@ function MarketPage() {
       .fadeIn();
   }
   function goGame() {
-    navigate('/selectGame', { state: type });
+    navigate('/selectGame', { state: true });
+  }
+  function music() {
+    setIsPlay(true);
   }
   useEffect(() => {
+    setTimeout(music, 5000);
     var container = $('.container');
     var rice = $('#rice');
     var desert = $('#desert');
@@ -49,6 +60,17 @@ function MarketPage() {
   }, []);
   return (
     <div className="container">
+      {isPlay ? (
+        <ReactAudioPlayer
+          id="audio"
+          src={backSong}
+          autoPlay={true}
+          loop={true}
+        />
+      ) : null}
+      {!isPlay ? (
+        <ReactAudioPlayer id="doorAudio" src={open} autoPlay={type} />
+      ) : null}
       <div className="line1">
         <svg
           width="444"
@@ -92,9 +114,11 @@ function MarketPage() {
       <div className="picket">
         <Picket />
       </div>
-      <div className="charicter">
-        <Charicter />
-      </div>
+      {isPlay ? (
+        <div className="charicter">
+          <Charicter />
+        </div>
+      ) : null}
     </div>
   );
 }

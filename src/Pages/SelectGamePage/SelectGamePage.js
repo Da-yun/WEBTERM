@@ -5,6 +5,8 @@ import Menu1 from '../../Components/MenuContainer/Menu1';
 import Menu2 from '../../Components/MenuContainer/Menu2';
 import Menu3 from '../../Components/MenuContainer/Menu3';
 import { useNavigate } from 'react-router-dom';
+import king from '../../audio/King.mp3';
+import ReactAudioPlayer from 'react-audio-player';
 import wall from '../../Image/selectgame.jpg';
 import $ from 'jquery';
 // 상점 입장 시 나오는 게임 선택 홈페이지입니다.
@@ -12,9 +14,10 @@ import $ from 'jquery';
 function SelectGamePage() {
   const location = useLocation();
   const navigate = useNavigate();
-  var type = location.state;
+  let type = location.state;
   useEffect(() => {
     var item1 = $('.menu1');
+    console.log(type);
     item1.mouseenter(function (e) {
       item1.animate({ width: '+=150px' });
     });
@@ -31,6 +34,9 @@ function SelectGamePage() {
     item2.mouseleave(function (e) {
       item2.animate({ width: '-=150px' });
     });
+    item2.click(function (e) {
+      navigate('/gamePage2');
+    });
     var item3 = $('.menu3');
     item3.mouseenter(function (e) {
       item3.animate({ width: '+=150px' });
@@ -44,6 +50,7 @@ function SelectGamePage() {
     <div className="contain">
       <img src={wall} alt="background" id="backgroundWall" />
       <div className="menu">
+        <ReactAudioPlayer id="audio" src={king} autoPlay={type} loop={true} />
         <div className="menu1">
           <Menu1 />
         </div>

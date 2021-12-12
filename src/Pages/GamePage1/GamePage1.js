@@ -67,7 +67,7 @@ function GamePage1() {
       setTimeout(function () {
         let lst = createImg();
         $('#imgBucket').html(lst);
-        $('#count').css('display', 'flex');
+        $('#count').css('display', 'block');
         time();
       }, 1000);
     }, 3000);

@@ -7,6 +7,12 @@
   top: 0;
   left: 0;
 }
+#audio {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+}
 .img {
   width: 100%;
   opacity: 0.4;
