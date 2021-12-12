@@ -94,7 +94,7 @@ function HomePage() {
           </button>
         </div>
       </div>
-      <canvas id="canvas"></canvas>
+      <canvas id="canvas2"></canvas>
       <img src={cari} alt="car" id="car"></img>
     </div>
   );

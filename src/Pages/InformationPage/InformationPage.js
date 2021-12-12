@@ -29,7 +29,7 @@ function InformationPage() {
       navigate('/market');
     });
     $('#re').click(function () {
-      navigate('/selectGame');
+      navigate('/selectGame', { state: true });
     });
   });
 

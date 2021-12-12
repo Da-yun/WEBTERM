@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../GamePage1/style.css';
 import FireBucket from '../../Components/FireBucket/FireBucket';
 import ramen from '../../Image/gimchi/ramen.png';

@@ -42,7 +42,7 @@
 #korean {
   background: linear-gradient(to right top, #8b00ff, #ffa69e);
 }
-canvas {
+#canvas {
   position: absolute;
   display: flex;
   width: 100%;
