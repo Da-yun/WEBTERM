@@ -1,26 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@keyframes example {
+  0% {
+    background-color: coral;
+  }
+  25% {
+    background-color: tomato;
+  }
+  50% {
+    background-color: lightsalmon;
+  }
+  100% {
+    background-color: orangered;
+  }
+}
 .container {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   width: 100%;
+  align-items: center;
   justify-content: center;
-  justify-content: center;
+  height: 100%;
+  flex-direction: row;
+  overflow-y: scroll;
+}
+body {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.cotainer2 {
+  display: flex;
+  position: absolute;
+  top: 0%;
+  flex-direction: column;
+}
+#cart {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 60px;
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  color: aliceblue;
+}
+#img1,
+#imgcontainer {
+  width: 300px;
+  margin-bottom: 3%;
+  background-color: #974603;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+#img1 {
+  margin-top: 3%;
+}
+#IMG {
+  width: 100%;
   height: 100%;
 }
 
-p {
-  color: white;
-  margin-top: 5%;
+#card {
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 30px;
-}
-
-button {
-  width: 100%;
-  height: 3%;
-}
-
-.table {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
