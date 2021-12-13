@@ -5,7 +5,7 @@ function Charicter() {
   return (
     <svg
       width="141"
-      height="232"
+      height="100%"
       id="ozingu"
       viewBox="0 0 141 232"
       fill="none"
@@ -19,13 +19,13 @@ function Charicter() {
         d="M121.5 56.5C121.5 83.3182 98.9146 105.5 70.5 105.5C42.0854 105.5 19.5 83.3182 19.5 56.5C19.5 29.6818 42.0854 7.5 70.5 7.5C98.9146 7.5 121.5 29.6818 121.5 56.5Z"
         fill="black"
         stroke="#DC1767"
-        stroke-width="15"
+        strokeWidth="15"
       />
       <path
         d="M94.5 51.5C94.5 64.711 83.5752 75.5 70 75.5C56.4248 75.5 45.5 64.711 45.5 51.5C45.5 38.289 56.4248 27.5 70 27.5C83.5752 27.5 94.5 38.289 94.5 51.5Z"
         fill="black"
         stroke="white"
-        stroke-width="5"
+        strokeWidth="5"
       />
       <path
         d="M16.022 225.035C15.9192 217.116 24.9377 215.078 32.3929 214.981C39.8481 214.884 45.9167 216.726 46.0195 224.646C46.1223 232.565 41.0426 231.283 32.6058 231.393C24.169 231.502 16.1248 232.954 16.022 225.035Z"
@@ -37,14 +37,14 @@ function Charicter() {
         x2="103"
         y2="80.5"
         stroke="#2F2F2F"
-        stroke-width="3"
+        strokeWidth="3"
       />
       <path
         d="M63.3158 80.2057L63.5002 97.5"
         stroke="#2F2F2F"
-        stroke-width="3"
+        strokeWidth="3"
       />
-      <path d="M76.6854 80L76.8698 97.2943" stroke="#2F2F2F" stroke-width="3" />
+      <path d="M76.6854 80L76.8698 97.2943" stroke="#2F2F2F" strokeWidth="3" />
       <path
         d="M97.1275 225.229C97.0247 217.31 106.043 215.272 113.498 215.175C120.954 215.079 127.022 216.92 127.125 224.84C127.228 232.759 122.148 231.478 113.711 231.587C105.274 231.697 97.2303 233.149 97.1275 225.229Z"
         fill="black"
@@ -55,7 +55,7 @@ function Charicter() {
         x2="71.5449"
         y2="199.999"
         stroke="black"
-        stroke-width="3"
+        strokeWidth="3"
       />
       <rect x="47" y="178" width="11" height="6" fill="black" />
       <rect x="86" y="178" width="11" height="6" fill="black" />

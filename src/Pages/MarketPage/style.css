@@ -1,25 +1,79 @@
-.container {
+#container {
+  background-color: #d2ae78;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  align-items: flex-end;
+  flex-direction: column;
+  left: 0;
+  right: 0;
 }
 
-.line1 {
-  position: absolute;
-  top: 0;
+#line {
   display: flex;
-  height: 100%;
-
-  left: 0;
+  width: 100%;
+  height: 2%;
+  margin-top: 130px;
+  background-color: red;
+}
+#one {
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  z-index: 1;
+  right: 40%;
+  top: 6%;
+  display: flex;
+}
+#tree {
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  z-index: 1;
+  right: 40%;
+  display: flex;
+}
+#light {
+  position: absolute;
+  left: 1%;
+  top: 300px;
+}
+.line1 {
+  margin-top: 300px;
+  display: flex;
+  background-color: #d2ae78;
+  border-color: #dc1767;
+  border-width: 30px;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 300px;
+  align-self: flex-start;
+  border-style: solid;
 }
 .repeat {
   background-repeat: repeat-y;
 }
-.line2 {
+#stair {
   position: absolute;
-  top: 0;
-  right: 0;
+  width: 200px;
+  height: 400px;
+  right: 3%;
+  top: 0%;
+}
+
+.line2 {
+  margin-top: 300px;
   display: flex;
-  height: 100%;
+  background-color: #d2ae78;
+  border-color: #0f463c;
+  position: absolute;
+  right: 1%;
+  bottom: 300px;
+  border-width: 30px;
+  width: fit-content;
+  padding: 20px;
+  border-style: solid;
 }
 #move {
   display: none;
@@ -44,12 +98,9 @@
   background-size: auto auto;
 }
 #rice {
-  position: absolute;
-  top: 1%;
-  left: 2%;
   display: flex;
-  width: 80%;
-  height: 40%;
+  width: 300px;
+  height: 100%;
 }
 .cart {
   z-index: 1;
@@ -58,12 +109,9 @@
   right: 1%;
 }
 #desert {
-  position: absolute;
-  top: 10%;
-  right: 2%;
   display: flex;
-  width: 60%;
-  height: 40%;
+  width: 300px;
+  height: 100%;
 }
 
 .footer {

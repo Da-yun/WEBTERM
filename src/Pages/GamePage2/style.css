@@ -28,6 +28,7 @@
   display: none;
   width: 100%;
   height: 50%;
+  position: absolute;
 }
 
 #countTEXT {
@@ -41,4 +42,10 @@
   font-family: 'Jua', sans-serif;
   color: white;
   display: none;
+}
+
+#img {
+  display: none;
+  width: 200px;
+  height: 200px;
 }

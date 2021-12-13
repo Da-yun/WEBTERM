@@ -73,8 +73,8 @@ function GamePage1() {
     }, 3000);
     $(document).on('click', '#1', function (e) {
       if (0 == index) {
-        navigate('/information');
         clearInterval(timer);
+        navigate('/information');
       } else {
         clearInterval(timer);
         console.log('t');

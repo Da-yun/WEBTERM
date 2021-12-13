@@ -36,6 +36,7 @@ function SelectGamePage() {
     });
     item2.click(function (e) {
       navigate('/gamePage2');
+      return false;
     });
     var item3 = $('.menu3');
     item3.mouseenter(function (e) {
@@ -61,10 +62,7 @@ function SelectGamePage() {
           <Menu3 />
         </div>
       </div>
-      <p className="goback" onClick={() => navigate(-1)}>
-        마을로 돌아가기
-      </p>
-      <p className="goback" onClick={() => navigate(-1)}>
+      <p className="goback" onClick={() => navigate('/market')}>
         마을로 돌아가기
       </p>
     </div>

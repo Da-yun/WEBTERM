@@ -35,7 +35,7 @@ function HomePage() {
   function draw() {
     var audio = document.getElementById('carAudio');
     audio.play();
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('Canvas');
     var ctx = canvas.getContext('2d');
     var car = document.getElementById('car');
     ctx.clearRect(0, 0, 331, 233);
@@ -94,7 +94,7 @@ function HomePage() {
           </button>
         </div>
       </div>
-      <canvas id="canvas2"></canvas>
+      <canvas id="Canvas"></canvas>
       <img src={cari} alt="car" id="car"></img>
     </div>
   );

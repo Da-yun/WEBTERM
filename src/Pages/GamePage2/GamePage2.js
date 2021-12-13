@@ -3,22 +3,30 @@ import React, { useEffect } from 'react';
 import FireBucket from '../../Components/FireBucket/FireBucket';
 import $ from 'jquery';
 import { Gi3DHammer, GiSpikesInit } from 'react-icons/gi';
-
+import buchu from '../../Image/buchu.png';
+import { useNavigate } from 'react-router-dom';
 function GamePage2() {
-  let x = 0;
+  const navigate = useNavigate();
+  let x = 115;
+  let y = -200;
   let cn = 10;
   let timer;
-  let target = 30;
+  let target = 10;
   let count = 0;
-  let y = -40;
+  let timer2;
   function draw() {
-    var canvas = document.getElementById('canvas3');
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, 150, 75);
-
-    ctx.arc(x, y, 40, 0, 2 * Math.PI);
-    ctx.stroke();
-    x++;
+    if (y == 100) {
+      clearInterval(timer2);
+      navigate('/informationBuchu');
+      return false;
+    } else {
+      var canvas = document.getElementById('canvas2');
+      var ctx = canvas.getContext('2d');
+      var img = document.getElementById('img');
+      ctx.clearRect(0, 0, 200, 200);
+      ctx.drawImage(img, x, y, 50, 50);
+      y++;
+    }
   }
   function rePlay() {
     $('.circle').stop(true);
@@ -47,23 +55,32 @@ function GamePage2() {
       $('#hammer').css('display', 'block');
       $('#countTEXT').css('display', 'block');
       $('.circle').css('display', 'flex');
-      $('#canvas2').css('display', 'flex');
       time();
-      setTimeout(function () {}, 9000);
     }, 3000);
     $(document).on('click', '.rePlay', function (e) {
       window.location.replace('/gamePage2');
+      return false;
     });
     $('#hammer').click(function () {
       count++;
-      console.log(count);
-      $('#hammer').attr('transform', 'rotate(90)');
-      $('.circle').animate({
-        height: 'toggle',
-      });
-      setTimeout(function () {
-        $('#hammer').attr('transform', 'rotate(0)');
-      }, 20);
+      if (count >= target) {
+        $('.circle').stop(true);
+        clearInterval(timer);
+        $('#hammer').css('display', 'none');
+        $('#countTEXT').css('display', 'none');
+        $('#canvas2').css('display', 'flex');
+        $('.circle').css('display', 'none');
+        timer2 = setInterval(draw, 5);
+        return false;
+      } else {
+        $('#hammer').attr('transform', 'rotate(90)');
+        $('.circle').animate({
+          height: 'toggle',
+        });
+        setTimeout(function () {
+          $('#hammer').attr('transform', 'rotate(0)');
+        }, 20);
+      }
     });
   });
   return (
@@ -77,6 +94,7 @@ function GamePage2() {
       <Gi3DHammer id="hammer" size={70} color="black" />
       <div className="circle"></div>
       <canvas id="canvas2"></canvas>
+      <img id="img" src={buchu} alt="부추전" />
       <div className="fireBucket">
         <p className="rePlay">다시 시작</p>
         <FireBucket />
