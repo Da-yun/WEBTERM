@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../GamePage1/style.css';
 import FireBucket from '../../Components/FireBucket/FireBucket';
 import ramen from '../../Image/gimchi/ramen.png';
@@ -73,8 +73,8 @@ function GamePage1() {
     }, 3000);
     $(document).on('click', '#1', function (e) {
       if (0 == index) {
-        navigate('/information');
         clearInterval(timer);
+        navigate('/information');
       } else {
         clearInterval(timer);
         console.log('t');

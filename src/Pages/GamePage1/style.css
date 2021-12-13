@@ -35,7 +35,6 @@
 }
 .fireBucket {
   display: flex;
-  flex-wrap: wrap;
   align-content: center;
   align-items: center;
   flex-direction: column;
@@ -43,7 +42,7 @@
   height: 50%;
 }
 
-#rePlay{
+#rePlay {
   display: none;
 }
 #imgBucket {
