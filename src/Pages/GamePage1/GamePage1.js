@@ -13,27 +13,32 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import $ from 'jquery';
 import { BsFillAlarmFill } from 'react-icons/bs';
+// 김치찌개와 불고기 게임 화면
 function GamePage1() {
   const array = [];
-  let index = -1;
+  let index = -1; // 정답 위치를 저장할 변수
   const location = useLocation();
-  let cn = 6;
+  let cn = 6; // 제한 시간
   let timer = '';
-  let type = location.state;
-  let lang = window.localStorage.getItem('language');
+  let type = location.state; // 선택한 메뉴 값을 가져옴.
+  let lang = window.localStorage.getItem('language'); // 선택한 언어 값을 가져옴.
 
   const navigate = useNavigate();
   function createList() {
+    // 게임 실행 시에 1초동안 등장하는 이미지를 생성하는 함수입니다.
+    // sort 함수를 사용하여 무작위로 섞어줍니다.
     let img1;
     let img2;
     let img3;
     let img4;
     if (type === 'kimchi') {
+      // 김치찌개 선택 시 등장할 이미지들
       img1 = '<img src=' + ramen + " alt='background' id='ramen' />";
       img2 = '<img src=' + gimchi + " alt='background' id='key' />";
       img3 = '<img src=' + boodae + " alt='background' id='boodae' />";
       img4 = '<img src=' + oogugi + " alt='background' id='oogugi' />";
     } else {
+      // 불고기 선택 시 등장할 이미지들
       img1 = '<img src=' + beef + " alt='background' id='beef' />";
       img2 = '<img src=' + bulgogi + " alt='background' id='key' />";
       img3 = '<img src=' + gob + " alt='background' id='gob' />";
@@ -43,10 +48,11 @@ function GamePage1() {
     array.push(img2);
     array.push(img3);
     array.push(img4);
-    array.sort(() => Math.random() - 0.5);
+    array.sort(() => Math.random() - 0.5); // 무작위 섞기
     let rst = '';
     for (let i = 0; i < array.length; i++) {
       if (array[i].includes('key')) {
+        // id값에 key라는 값을 미리 넣어놓고 정답 index를 미리 저장해놓는다.
         index = i;
         console.log('dd' + index);
       }
@@ -55,23 +61,27 @@ function GamePage1() {
     return rst;
   }
   function createImg() {
+    // 이미지가 1초 등장하고 숨겨진 후에 등장할 컴포넌트를 생성하는 함수.
     let list =
       "<div id = '1' class = 'hidden'></div><div id = '2'  class = 'hidden'></div><div id = '3'  class = 'hidden'></div><div id = '4'  class = 'hidden'></div>";
     return list;
   }
   function rePlay() {
+    // 재시작 화면을 나타낸느 함수.
     $('#imgBucket').css('display', 'none');
     $('#count').css('display', 'none');
     $('.fireBucket').css('display', 'flex');
     $('#rePlay').css('display', 'flex');
   }
   function time() {
+    // 타이머를 통해 6초에서 1초 지날 때마다 값을 하나씩 줄이고 0이 되면 타이머를 없앤다.
     timer = setInterval(function () {
       if (cn === 0) {
         clearInterval(timer);
-        rePlay();
+        rePlay(); // 재시작 화면 셋팅
       } else {
         cn--;
+        // 선택한 언에 따라 카운터 객체를 생성하고 값을 바꿔준다.
         if (lang == 'english') {
           let counter =
             " <p id='countText'> " + 'TimeLimit ' + cn + ' seconds' + '</p>';
@@ -87,22 +97,29 @@ function GamePage1() {
 
   useEffect(() => {
     setTimeout(function () {
+      // 3초동안 intro 글을 보여주고 숨긴다.
       $('.intro').css('display', 'none');
       $('.fireBucket').css('display', 'none');
       let content = createList();
       $('#imgBucket').html(content);
+      // 이미지를 보여준다.
       setTimeout(function () {
+        // 1초가 지나면 hidden 컴포넌트를 생성해서 바꿔준다.
+        // 카운터가 시작된다.
         let lst = createImg();
         $('#imgBucket').html(lst);
         $('#count').css('display', 'block');
         time();
       }, 1000);
     }, 3000);
+    // 아래에서 부터는 hidden 객체를 선택 시에 미리 정해놓은 아이디 값은 순서이다. 이 순서와 index가 맞는지 확인하여 정답을 확인한다.
     $(document).on('click', '#1', function (e) {
       if (0 === index) {
         clearInterval(timer);
+        // 맞으면 타이머를 없애고 information page로 이동
         navigate('/information', { state: { type } });
       } else {
+        // 틀리면 다시시작으로 이동
         clearInterval(timer);
         console.log('t');
         rePlay();
@@ -142,6 +159,7 @@ function GamePage1() {
       }
     });
     $(document).on('click', '#rePlay', function (e) {
+      // 다시 시작 화면에서 다시시작 선택 시에 페이지를 reload한다.
       window.location.replace('/gamePage1');
     });
   });

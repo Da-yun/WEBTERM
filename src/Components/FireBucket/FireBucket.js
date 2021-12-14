@@ -1,3 +1,4 @@
+// 게임에서 등장하는 아궁이 svg 파일입니다. Figma로 직접 그려서 생성하였습니다.
 function FireBucket() {
   return (
     <svg

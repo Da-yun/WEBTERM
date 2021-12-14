@@ -9,9 +9,9 @@ import CartPage from './Pages/CartPage/CartPage';
 import GamePage2 from './Pages/GamePage2/GamePage2';
 import InformationPage from './Pages/InformationPage/InformationPage';
 import InformationPage2 from './Pages/InformationPage2/InformationPage2';
-// 생성한 페이지를 리턴하면 npm start 시에 확인 할 수 있습니다
 
 function App() {
+  //  리액트 router를 사용하여 화면 간의 이동을 구현하였습니다.  HomePage가 제일 먼저 나오는 기본 페이지입니다. npm install 후에 npm start 시에 빌드할 수 있습니다.
   return (
     <BrowserRouter>
       <Routes>

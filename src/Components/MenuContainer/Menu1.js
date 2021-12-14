@@ -1,3 +1,4 @@
+// 게임 선택 화면에 나오는 김치찌개 svg 파일입니다. Figma로 직접 작성하여 생성하였습니다.
 import React from 'react';
 function Menu1() {
   return (

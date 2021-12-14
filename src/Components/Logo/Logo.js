@@ -1,3 +1,4 @@
+//HomePage에 등장하는 로고 svg 파일입니다. 부모요소에서 color를 전달받아 바꿔줍니다.
 function Logo({ color }) {
   return (
     <svg

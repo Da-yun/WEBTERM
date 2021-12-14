@@ -6,16 +6,11 @@ import boodae from '../../Image/gimchi/boodae.png';
 import oogugi from '../../Image/gimchi/oogugi.png';
 import $ from 'jquery';
 
-// 장바구니 클릭 시 이동하는 장바구니 화면입니다.
-// react 라이브러리인 react-table을 사용하여 테이블을 구성합니다.
-// 아직 데이터 작업이 이루어지지 않아 테이블 컴포넌트만 생성한 상태입니다.
+// 홈스크린에서 화면 끝을 클릭하면 이동하는 페이지입니다.
+
 function CartPage() {
-  const img = [
-    '<img src = ' + ramen + '/>',
-    '<img src = ' + ramen + '/>',
-    '<img src = ' + ramen + '/>',
-  ];
   function handler(e) {
+    // css 애니메이션을 통해 마우스를 올리면 4초동안 배경 색깔이 4개로 바뀐다.
     if (e.target.id === 'IMG') {
       let vi = $(e.target.parentNode);
       vi.css('animation-name', 'example');
@@ -27,13 +22,7 @@ function CartPage() {
     }
   }
   useEffect(() => {
-    var item1 = $('#imgContainer');
     document.addEventListener('mousemove', handler);
-    item1.mouseenter(function (e) {
-      item1.animate({ width: '+=150px' });
-    });
-    item1.click(function () {});
-    item1.mouseleave(function (e) {});
   });
   return (
     <div className="container">

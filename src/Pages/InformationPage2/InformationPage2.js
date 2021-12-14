@@ -5,6 +5,7 @@ import Charicter from '../../Components/Charicter/Charicter';
 import $ from 'jquery';
 import buchu from '../../Image/buchu.png';
 import { useNavigate } from 'react-router-dom';
+// 게임 성공 시에 이동하는 화면, InformationPage1과 전달 내용 빼고 거의 다같음.
 function InformationPage2() {
   const navigate = useNavigate();
   let lang = window.localStorage.getItem('language');

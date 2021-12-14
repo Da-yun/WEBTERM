@@ -1,4 +1,6 @@
+// MarketPage에 등장하는 무궁화 꽃이 피었습니다의 캐릭터 svg 파일입니다. Figma로 직접 그려서 생성하였습니다.
 function Boss({ color }) {
+  // 부모 요소인 MarketPage의 props를 전달받아 눈 색깔을 변경합니다.
   return (
     <svg
       width="110"

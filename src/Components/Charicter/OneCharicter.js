@@ -1,3 +1,4 @@
+// MarketPage에 등장하는 초록색 옷을 입은 캐릭터 svg 파일입니다. Figma로 직접 그려서 생성하였습니다.
 function OneCharicter() {
   return (
     <svg

@@ -1,3 +1,4 @@
+// HomePage 등장하는 차를 타고 이동하는 캐릭터 svg 파일입니다. Figma로 직접 그려서 생성하였습니다.
 function CarCharicter() {
   return (
     <svg
