@@ -15,6 +15,7 @@ function SelectGamePage() {
   const location = useLocation();
   const navigate = useNavigate();
   let type = location.state;
+  let lang = window.localStorage.getItem('language');
   useEffect(() => {
     var item1 = $('.menu1');
     console.log(type);
@@ -39,6 +40,10 @@ function SelectGamePage() {
       return false;
     });
     var item3 = $('.menu3');
+    item3.click(function (e) {
+      navigate('/gamePage1', { state: 'bulgogi' });
+      return false;
+    });
     item3.mouseenter(function (e) {
       item3.animate({ width: '+=150px' });
     });
@@ -63,7 +68,7 @@ function SelectGamePage() {
         </div>
       </div>
       <p className="goback" onClick={() => navigate('/market')}>
-        마을로 돌아가기
+        {lang == 'english' ? 'Back to Town' : '마을로 돌아가기'}
       </p>
     </div>
   );

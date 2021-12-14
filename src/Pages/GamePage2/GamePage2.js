@@ -7,6 +7,7 @@ import buchu from '../../Image/buchu.png';
 import { useNavigate } from 'react-router-dom';
 function GamePage2() {
   const navigate = useNavigate();
+  let lang = window.localStorage.getItem('language');
   let x = 115;
   let y = -200;
   let cn = 10;
@@ -33,8 +34,8 @@ function GamePage2() {
     $('#hammer').css('display', 'none');
     $('.circle').css('display', 'none');
     $('#countTEXT').css('display', 'none');
-    $('.rePlay').css('display', 'block');
-    $('.fireBucket').css({ bottom: '30%' });
+    $('#rePlay').css('display', 'block');
+    $('.fireBucket').css({ bottom: '20%' });
   }
   function time() {
     timer = setInterval(function () {
@@ -43,8 +44,13 @@ function GamePage2() {
         rePlay();
       } else {
         cn--;
-        let counter = '제한시간 ' + cn + '초';
-        $('#countTEXT').html(counter);
+        if (lang == 'english') {
+          let counter = 'TimeLimit ' + cn + 'seconds';
+          $('#countTEXT').html(counter);
+        } else {
+          let counter = '제한시간 ' + cn + '초';
+          $('#countTEXT').html(counter);
+        }
       }
     }, 1000);
   }
@@ -57,7 +63,7 @@ function GamePage2() {
       $('.circle').css('display', 'flex');
       time();
     }, 3000);
-    $(document).on('click', '.rePlay', function (e) {
+    $(document).on('click', '#rePlay', function (e) {
       window.location.replace('/gamePage2');
       return false;
     });
@@ -85,18 +91,28 @@ function GamePage2() {
   });
   return (
     <div className="game2Container">
-      <p className="intro">
-        오늘의 메뉴는 부추전! <br /> 10초동안 <br />
-        망치를 빠르게 클릭하여 박을 터트리세요!
-        <br />
+      {lang == 'english' ? (
+        <p className="intro">
+          Today's menu is Buchujeon! <br /> For 10 seconds <br />
+          Click the hammer Quickly to pop the gourd!
+          <br />
+        </p>
+      ) : (
+        <p className="intro">
+          오늘의 메뉴는 부추전! <br /> 10초동안 <br />
+          망치를 빠르게 클릭하여 박을 터트리세요!
+          <br />
+        </p>
+      )}
+      <p id="countTEXT">
+        {lang == 'english' ? 'TimeLimit 10 seconds' : '제한시간 10초'}
       </p>
-      <p id="countTEXT">제한시간 10초</p>
       <Gi3DHammer id="hammer" size={70} color="black" />
       <div className="circle"></div>
       <canvas id="canvas2"></canvas>
       <img id="img" src={buchu} alt="부추전" />
       <div className="fireBucket">
-        <p className="rePlay">다시 시작</p>
+        <p id="rePlay">{lang == 'english' ? 'RePlay' : '다시 시작'}</p>
         <FireBucket />
       </div>
     </div>

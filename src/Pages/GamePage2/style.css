@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 .circle {
   background-color: goldenrod;
-  width: 200px;
+  width: 150px;
   display: none;
-  height: 200px;
+  height: 150px;
   border-radius: 150px;
 }
 .game2Container {

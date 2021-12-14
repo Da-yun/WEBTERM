@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 .container {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -93,6 +94,8 @@
   font-size: 50px;
   font-weight: bold;
   margin-top: 7%;
+  font-family: 'Jua', sans-serif;
+  color: plum;
 }
 .home {
   display: flex;

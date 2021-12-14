@@ -26,7 +26,7 @@ function MarketPage() {
     window.speechSynthesis.cancel();
     const speechMsg = new SpeechSynthesisUtterance();
     speechMsg.rate = 1; // 속도: 0.1 ~ 10
-    speechMsg.pitch = 1; // 음높이: 0 ~ 2
+    speechMsg.pitch = 1.7; // 음높이: 0 ~ 2
     speechMsg.lang = 'ko-KR'; //"en-US"
     speechMsg.text = '무궁화 꽃이 피었습니다.';
     // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
@@ -36,6 +36,7 @@ function MarketPage() {
   const navigate = useNavigate();
   let x = 0;
   let y = 0;
+
   let type = location.state;
   let time = '';
   const [isShow, setIsShow] = useState(false);

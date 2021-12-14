@@ -25,13 +25,18 @@
 }
 #count {
   display: none;
-  margin-top: 10%;
   justify-content: center;
   align-content: center;
   align-items: baseline;
+  color: firebrick;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 80px;
 }
 #countText {
   margin-right: 5px;
+  color: wheat;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 40px;
 }
 .fireBucket {
   display: flex;
@@ -44,6 +49,9 @@
 
 #rePlay {
   display: none;
+  color: bisque;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 50px;
 }
 #imgBucket {
   width: 80%;
@@ -56,12 +64,22 @@
   width: 20%;
   height: 50%;
   margin: 10px;
-  background-color: #fcaf3c;
+  background-color: orange;
 }
 #ramen,
-#gimchi,
+#key,
 #boodae,
 #oogugi {
+  width: 20%;
+  height: 40%;
+  border: 2px;
+  margin: 10px;
+  border-color: black;
+  border-style: dotted;
+}
+#beef,
+#gob,
+#sam {
   width: 20%;
   height: 40%;
   border: 2px;

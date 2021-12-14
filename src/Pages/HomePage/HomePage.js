@@ -13,7 +13,6 @@ function HomePage() {
   const [color, setColor] = useState('white');
   const navigate = useNavigate();
 
-  const [playing, setPlaying] = useState(false);
   let num = 0;
   var Array = ['#ff3399', 'white'];
   let timer;
@@ -67,8 +66,10 @@ function HomePage() {
     let korean = document.getElementById('korean').style;
     let english = document.getElementById('english').style;
     if (korean.color != 'red' && english.color != 'red') {
-      alert('언어를 먼저 선택하세요');
+      alert('Select Your Ranguage.');
     } else {
+      let language = english.color == 'red' ? 'english' : 'korean';
+      window.localStorage.setItem('language', language);
       timer = setInterval(draw, 5);
     }
   }
