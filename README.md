@@ -1,74 +1,23 @@
 # WEBTERM
 
-텀프로젝트 기록
+### 웹프로그래밍 텀프로젝트 기록
+### 외국인을 위한 한국음식문화 홍보 사이트
+### 영화 '오징어 게임' 모티브로 제작하였고 흥미 유발을 위해 여러 게임을 제공함
+### 캐릭터 및 여러 요소는 svg로 직접 그리거나 무료 제공파일을 다운받아 사용함
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 기능
+## 1. 언어 선택 기능 및 게임 시작시 캐릭터가 차를 타고 이동하는 기능
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/71553394/176133380-2576535c-70b3-45f5-96b7-5520509b680a.gif)
 
-## Available Scripts
+## 2. '무궁화 꽃이 피었습니다' 게임과 같이 음성이 제공되어 게임 진행이 되고 무궁화 꽃 노래를 부르는 캐릭터가 빨간 눈이 되면 캐릭터가 이동하지 못함. 이동 가능할 시에는 선택한 좌표로 이동
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/71553394/176134221-aa344aa5-8d7a-4894-9a7c-ced13c8cb850.gif)
 
-In the project directory, you can run:
+## 3. 푸드트럭 선택 시 게임 화면으로 이동. 부추전 메뉴 선택 시 망치를 클릭해 박을 터트려 음식을 얻는 게임을 진행
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/71553394/176134912-7b33029c-5269-4444-bd3c-52a2ef4a88e3.gif)
 
-### `npm start`
+## 3-1. 게임에서 성공하면 정보 제공 화면으로 이동. 이때 캐릭터를 선택하면 웹 tts api를 이용해 음성으로 정보가 제공됨. 선택한 언어에 따라 영어, 한국어로 제공.
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/71553394/176135340-26c77f1f-6283-420c-9aac-75ee898b9855.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 4. 김치찌개 메뉴 선택 시 정해진 시간 안에 김치찌개를 찾는 게임을 진행. 실패 시에는 다시시작 가능
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/71553394/176135786-a2e831c5-3a12-460a-b125-dedf5f6f900f.gif)
